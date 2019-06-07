@@ -41,9 +41,12 @@
   <ItemGroup>
     <Compile Include="ProgressBar.cs" />
     <Compile Include="ProgressBarConfig.cs" />
+    <Compile Include="ProgressBarException.cs" />
     <Compile Include="ProgressBars\ConsoleProgressBar.cs" />
     <Compile Include="ProgressBarType.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

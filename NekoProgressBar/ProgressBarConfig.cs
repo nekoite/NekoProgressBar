@@ -18,26 +18,40 @@ namespace NekoProgressBar
 		/// </summary>
 		public bool UsePercentage { get; set; } = false;
 
+		/// <summary>
+		/// <para>
+		/// 仅在<see cref="UsePercentage"/>为<see langword="false"></see>下有效。
+		/// </para>
+		/// <para>最大值。</para>
+		/// </summary>
 		public long MaxValue { get; set; } = 100;
 
 		/// <summary>
-		/// 是否用数字显示进度
-		/// </summary>
-		public bool ShowStatus { get; set; } = true;
-
-		public string StatusFormat { get; set; } = "{0:D} / {1:D} ({2:P2})";
-
-		#region Console Configs
-
-		/// <summary>
 		/// <para>
-		/// 仅在<see cref="PBType"/>为<see cref="ProgressBarType.Console"/>且
-		/// <see cref="UsePercentage"/>为<see langword="false"></see>下有效。
+		/// 仅在<see cref="UsePercentage"/>为<see langword="false"></see>下有效。
 		/// </para>
 		/// <para>最小值。</para>
 		/// </summary>
 		public long MinValue { get; set; } = 0;
 
+		/// <summary>
+		/// 是否显示数字和百分比进度
+		/// </summary>
+		public bool ShowStatus { get; set; } = true;
+
+		/// <summary>
+		/// <para>仅在<see cref="ShowStatus"/>为真的情况下有效。显示数字或百分比进度的格式。</para>
+		/// <para>如果设置了<see cref="UsePercentage"/>，那么只能有1个值。</para>
+		/// </summary>
+		public string StatusFormat { get; set; } = "{0} / {1} ({2})";
+
+		#region Console Configs
+
+		/// <summary>
+		/// 仅在<see cref="PBType"/>为<see cref="ProgressBarType.Console"/>且
+		/// <see cref="UsePercentage"/>为<see langword="false"></see>下有效。
+		/// <para>起始字符。</para>
+		/// </summary>
 		public char StartChar { get; set; } = '[';
 
 		public char EndChar { get; set; } = ']';
@@ -45,6 +59,17 @@ namespace NekoProgressBar
 		public char CompletedChar { get; set; } = '=';
 
 		public char Indicator { get; set; } = '>';
+
+		public string LineBrake { get; set; } = "\r";
+
+		/// <summary>
+		/// <para>
+		/// 仅在<see cref="PBType"/>为<see cref="ProgressBarType.Console"/>且
+		/// <see cref="UsePercentage"/>为<see langword="false"></see>下有效。
+		/// </para>
+		/// <para>进度条的长度，默认为控制台宽度</para>
+		/// </summary>
+		public int ConsoleBarLength { get; set; } = Console.WindowWidth;
 
 		#endregion
 
