@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NekoProgressBar
 {
@@ -11,5 +7,7 @@ namespace NekoProgressBar
 		public ProgressBarException() : base() { }
 
 		public ProgressBarException(string msg) : base(msg) { }
+
+		public ProgressBarException(string msg, Exception innerException) : base(msg, innerException) { }
 	}
 }
