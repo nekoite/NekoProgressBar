@@ -8,7 +8,14 @@ namespace NekoProgressBar
 {
 	public enum ProgressBarType : byte
 	{
+		/// <summary>
+		/// 控制台
+		/// </summary>
 		Console,
-		Gui
+
+		/// <summary>
+		/// [未完成] GUI进度条
+		/// </summary>
+		[Obsolete] Gui
 	}
 }
